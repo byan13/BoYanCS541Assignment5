@@ -1,15 +1,15 @@
 //
-//  Project_5Tests.swift
-//  Project 5Tests
+//  Multiple_Screens_Tests.swift
+//  Multiple Screens!Tests
 //
-//  Created by Bo Yan on 11/4/19.
+//  Created by Bo Yan on 10/30/19.
 //  Copyright © 2019 Bo Yan. All rights reserved.
 //
 
 import XCTest
-@testable import Project_5
+@testable import Multiple_Screens_
 
-class Project_5Tests: XCTestCase {
+class Multiple_Screens_Tests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

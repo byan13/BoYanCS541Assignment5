@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Project 5
+//  Multiple Screens!
 //
-//  Created by Bo Yan on 11/4/19.
+//  Created by Bo Yan on 10/30/19.
 //  Copyright © 2019 Bo Yan. All rights reserved.
 //
 
