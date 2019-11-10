@@ -1,0 +1,104 @@
+commit e1b7170dc1c84dd360513e7df73c2d9380ceab47
+Author: byan13 <46941918+byan13@users.noreply.github.com>
+Date:   Sun Nov 10 16:02:27 2019 -0500
+
+    Update README.md
+
+ README.md | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 307db5f784d4243254c392ca5acda6d2fee80e54
+Author: Bo Yan <byan2@binghamton.edu>
+Date:   Sun Nov 10 15:49:59 2019 -0500
+
+    Final commit
+
+ Multiple Screens!/.DS_Store                        | Bin 6148 -> 6148 bytes
+ .../UserInterfaceState.xcuserstate                 | Bin 37630 -> 42041 bytes
+ .../xcdebugger/Breakpoints_v2.xcbkptlist           |  38 +++++++++++++++------
+ .../Multiple Screens!/Base.lproj/Main.storyboard   |  13 +++++--
+ Multiple Screens!/Multiple Screens!/Contacts.swift |  31 ++++++++++++++++-
+ .../ContactsTableViewController.swift              |  37 +++++++++++++++++++-
+ .../Multiple Screens!/ViewController.swift         |  26 +++++++++++++-
+ 7 files changed, 129 insertions(+), 16 deletions(-)
+
+commit 85cd3be5a924d65a3748363ca8dca04d03ae73c6
+Author: Bo Yan <byan2@binghamton.edu>
+Date:   Fri Nov 8 09:57:12 2019 -0500
+
+    Basic GUI and function done
+
+ .DS_Store                                          | Bin 6148 -> 6148 bytes
+ Multiple Screens!/.DS_Store                        | Bin 0 -> 6148 bytes
+ .../Multiple Screens!.xcodeproj}/project.pbxproj   | 256 +++++++++++----------
+ .../project.xcworkspace/contents.xcworkspacedata   |   2 +-
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   0
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 37630 bytes
+ .../xcdebugger/Breakpoints_v2.xcbkptlist           |  56 +++++
+ .../xcschemes/xcschememanagement.plist             |   2 +-
+ Multiple Screens!/Multiple Screens!/.DS_Store      | Bin 0 -> 6148 bytes
+ .../Multiple Screens!}/AppDelegate.swift           |   4 +-
+ .../Multiple Screens!/Assets.xcassets/.DS_Store    | Bin 0 -> 6148 bytes
+ .../AppIcon.appiconset/Contents.json               |   0
+ .../Assets.xcassets/Contents.json                  |   0
+ .../defaultPhoto.imageset/Contents.json            |  21 ++
+ .../defaultPhoto.imageset/defaultPhoto.png         | Bin 0 -> 15452 bytes
+ .../samplePhoto.imageset/Contents.json             |  21 ++
+ .../samplePhoto.imageset/samplePhoto.png           | Bin 0 -> 362780 bytes
+ .../Base.lproj/LaunchScreen.storyboard             |   0
+ .../Multiple Screens!/Base.lproj/Main.storyboard   | 182 +++++++++++++++
+ Multiple Screens!/Multiple Screens!/Contacts.swift |  24 ++
+ .../Multiple Screens!/ContactsTableViewCell.swift  |  27 +++
+ .../ContactsTableViewController.swift              | 132 +++++++++++
+ .../Multiple Screens!}/Info.plist                  |   0
+ .../Multiple Screens!}/SceneDelegate.swift         |   4 +-
+ .../Multiple Screens!/ViewController.swift         |  86 +++++++
+ .../Multiple Screens!Tests}/Info.plist             |   0
+ .../Multiple_Screens_Tests.swift                   |  10 +-
+ .../UserInterfaceState.xcuserstate                 | Bin 18184 -> 0 bytes
+ Project 5/Project 5/Base.lproj/Main.storyboard     |  35 ---
+ Project 5/Project 5/ViewController.swift           |  20 --
+ 30 files changed, 694 insertions(+), 188 deletions(-)
+
+commit d9ddc6007840503dde5f830e4a7d9b98b204bb34
+Author: Bo Yan <byan2@binghamton.edu>
+Date:   Wed Nov 6 09:59:45 2019 -0500
+
+    Update
+
+ .DS_Store                                          | Bin 0 -> 6148 bytes
+ .../UserInterfaceState.xcuserstate                 | Bin 9137 -> 18184 bytes
+ Project 5/Project 5/Base.lproj/Main.storyboard     |  21 ++++++++++++++++-----
+ 3 files changed, 16 insertions(+), 5 deletions(-)
+
+commit c9f4e4672d28f4235a0927e396470cdbf3c19676
+Author: Bo Yan <byan2@binghamton.edu>
+Date:   Mon Nov 4 09:51:42 2019 -0500
+
+    First commit
+
+ Project 5/Project 5.xcodeproj/project.pbxproj      | 470 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 9137 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ Project 5/Project 5/AppDelegate.swift              |  37 ++
+ .../AppIcon.appiconset/Contents.json               |  98 +++++
+ Project 5/Project 5/Assets.xcassets/Contents.json  |   6 +
+ .../Project 5/Base.lproj/LaunchScreen.storyboard   |  25 ++
+ Project 5/Project 5/Base.lproj/Main.storyboard     |  24 ++
+ Project 5/Project 5/Info.plist                     |  64 +++
+ Project 5/Project 5/SceneDelegate.swift            |  53 +++
+ Project 5/Project 5/ViewController.swift           |  20 +
+ Project 5/Project 5Tests/Info.plist                |  22 +
+ Project 5/Project 5Tests/Project_5Tests.swift      |  34 ++
+ 15 files changed, 882 insertions(+)
+
+commit 28dd7523afc3d1a4998b7c69249f539b58ff0136
+Author: byan13 <46941918+byan13@users.noreply.github.com>
+Date:   Fri Nov 1 23:28:20 2019 -0400
+
+    Initial commit
+
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
