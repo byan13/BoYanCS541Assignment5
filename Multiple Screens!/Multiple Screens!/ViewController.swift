@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoImageView.isUserInteractionEnabled = true
         nameTextField.delegate = self
         nameTextField.tag = 1
         phoneNumberTextField.delegate = self
@@ -82,5 +83,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         navigationItem.title = nameLabel.text
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        photoImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        if(nameTextField.isFirstResponder){
+            nameTextField.resignFirstResponder()
+        }else{
+            phoneNumberTextField.resignFirstResponder()
+        }
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
 }
 

@@ -12,10 +12,31 @@ import os.log
 class ContactsTableViewController: UITableViewController {
     var contactss = [Contacts]()
     
+    private func saveContacts() {
+//        let isSuccessfullySaved = NSKeyedArchiver.archiveRootObject(contactss, toFile: Contacts.ArchiveURL.path)
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: contactss, requiringSecureCoding: false)
+            try data.write(to: Contacts.ArchiveURL)
+            os_log("Contacts successfully saved.", log: OSLog.default, type: .debug)
+        } catch  {
+            os_log("Failed to save contacts.", log: OSLog.default, type: .error)
+        }
+//        if isSuccessfullySaved {
+//            os_log("Contacts successfully saved.", log: OSLog.default, type: .debug)
+//        } else {
+//            os_log("Failed to save contacts.", log: OSLog.default, type: .error)
+//        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        loadSampleContacts()
+        if let savedContacts = loadContacts() {
+            contactss += savedContacts
+        } else {
+            loadSampleContacts()
+        }
+        //loadSampleContacts()
     }
 
     // MARK: - Table view data source
@@ -52,6 +73,7 @@ class ContactsTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             contactss.remove(at: indexPath.row)
+            saveContacts()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -111,6 +133,7 @@ class ContactsTableViewController: UITableViewController {
                 contactss.append(contact)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveContacts()
         }
     }
     
@@ -129,4 +152,16 @@ class ContactsTableViewController: UITableViewController {
         contactss += [contact1, contact2, contact3]
     }
 
+    private func loadContacts() -> [Contacts]? {
+        do {
+            if let loadedContacts = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Data(referencing: NSData(contentsOf: Contacts.ArchiveURL))) as? [Contacts]{
+                return loadedContacts
+            }
+        } catch  {
+            os_log("Failed to load contacts", log: OSLog.default, type: .error)
+            return nil
+        }
+        return nil
+//        return NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Data(referencing: NSData(contentsOf: Contacts.ArchiveURL))) as? [Contacts]
+    }
 }
